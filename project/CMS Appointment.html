@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Appointment</title>
+
+<style>
+/* ===== MENU BAR ===== */
+.navbar{
+  width:100%;
+  background: rgba(255,255,255,0.9);
+  padding: 15px 30px;
+  display:flex;
+  justify-content:flex-end;
+  gap:25px;
+  box-shadow:0 2px 5px #aaa;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1000;
+}
+.navbar a{
+  text-decoration:none;
+  color:black;
+  font-weight:bold;
+}
+.navbar a:hover{
+  color:#0288d1;
+}
+
+/* ===== PAGE DESIGN ===== */
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background-color:#e0f0f0;
+}
+
+.page{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  padding-top:70px;
+}
+
+.container{
+  background:white;
+  border-radius:10px;
+  padding:30px;
+  width:400px;
+  box-shadow:0 0 10px #999;
+}
+
+.logo{
+  width:50px;
+  display:block;
+  margin:auto;
+  animation:rotate 5s linear infinite;
+}
+
+@keyframes rotate{
+  100%{transform:rotate(360deg);}
+}
+
+h2{
+  text-align:center;
+}
+
+input{
+  width:100%;
+  padding:8px;
+  margin:8px 0;
+}
+
+.btns{
+  display:flex;
+  justify-content:space-between;
+}
+
+button{
+  padding:10px 15px;
+  border:none;
+  background:#0288d1;
+  color:white;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+#msg{
+  color:green;
+  text-align:center;
+  display:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU BAR -->
+<div class="navbar">
+  <a href="CMS Home.html">Home</a>
+  <a href="CMS About.html">About</a>
+  <a href="CMS Registration.html">Register</a>
+  <a href="CMS Drugs.html">Drug Records</a>
+  <a href="CMS Appointment.html">Appointment</a> 
+  <a href="CMS Payment.html">Payment</a>
+</div>
+
+<div class="page">
+  <div class="container">
+    <img src="logo.png.JPG" class="logo">
+    <h2>Appointment</h2>
+
+    <form onsubmit="saveAndGo(event)">
+      <input type="text" placeholder="Enter patient name" required>
+      <input type="text" placeholder="Enter NIC" required>
+      <input type="date" required>
+      <input type="text" placeholder="Enter doctor name" required>
+      <input type="time" required>
+      <input type="text" placeholder="Enter drug name">
+      <input type="number" placeholder="Enter quantity">
+
+      <div class="btns">
+        <button type="submit">Save</button>
+        <button type="reset">Cancel</button>
+      </div>
+
+      <p id="msg">Appointment Saved Successfully!</p>
+    </form>
+  </div>
+</div>
+
+<script>
+function saveAndGo(e){
+  e.preventDefault();
+
+  // Show success message
+  document.getElementById("msg").style.display = "block";
+
+  // Redirect to Drug Records page after 1.5 seconds
+  setTimeout(function(){
+    window.location.href = "CMS Drugs.html";
+  }, 1500);
+}
+</script>
+
+</body>
+</html>

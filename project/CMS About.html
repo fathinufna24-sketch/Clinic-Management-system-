@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ClinicXpert — About</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-color: linear-gradient(135deg, #E6F1FF 0%, #F6FBF9 100%);
+      --card-bg: #ffffff;
+      --accent: #1f7aea;
+      --text: #0f1724;
+      --muted: #5b6470;
+      --radius: 12px;
+      --max-width: 920px;
+      --shadow: 0 8px 30px rgba(15,23,36,0.08);
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      font-family:"Inter",system-ui;
+      background:var(--bg-color);
+      color:var(--text);
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      background:#ffffff;
+      padding:14px 30px;
+      display:flex;
+      justify-content:flex-end;
+      gap:22px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+      z-index:1000;
+    }
+
+    .navbar a{
+      text-decoration:none;
+      font-weight:600;
+      color:var(--text);
+    }
+
+    .navbar a:hover{
+      color:var(--accent);
+    }
+
+    .container{
+      max-width:var(--max-width);
+      margin:100px auto 48px; /* navbar space */
+      padding:28px;
+    }
+
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,0.95),var(--card-bg));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
+      display:grid;
+      grid-template-columns:1fr 360px;
+      gap:28px;
+    }
+
+    @media(max-width:880px){
+      .card{grid-template-columns:1fr;}
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .logo{
+      width:56px;
+      height:56px;
+      border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),#3fd6b9);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:20px;
+    }
+
+    h1{margin:0;font-size:20px;}
+    .tag{
+      display:inline-block;
+      margin-top:4px;
+      padding:6px 10px;
+      border-radius:8px;
+      background:rgba(31,122,234,0.06);
+      color:var(--accent);
+      font-weight:600;
+      font-size:13px;
+    }
+
+    .lead{
+      margin:18px 0;
+      color:var(--muted);
+      line-height:1.55;
+    }
+
+    .features{display:flex;flex-direction:column;gap:10px;}
+    .feature{display:flex;gap:12px;}
+    .bullet{
+      width:34px;height:34px;
+      border-radius:8px;
+      background:rgba(31,122,234,0.08);
+      display:grid;
+      place-items:center;
+    }
+
+    .aside{
+      background:rgba(15,23,36,0.02);
+      border-radius:10px;
+      padding:18px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <a href="CMS.Home.html">Home</a>
+  <a href="CMS About.html">About</a>
+  <a href="CMS.Registration.html">Register</a>
+  <a href="CMS Drugs.html">Drug Records</a>
+  <a  href="CMS Appointment.html">Appointment</a>
+ <a  href="CMS Payment.html">Payment</a>
+
+</div>
+
+<div class="container">
+  <div class="card">
+    <div>
+      <div class="brand">
+        <div class="logo">CX</div>
+        <div>
+          <h1>ClinicXpert</h1>
+          <div class="tag">Smart Clinic Management</div>
+        </div>
+      </div>
+
+      <p class="lead">
+        <strong>ClinicXpert</strong> is a smart and user-friendly clinic management system designed to simplify everyday operations at your clinic. From patient registration and appointment scheduling to managing medical records and billing, ClinicXpert helps streamline your workflow efficiently.
+      </p>
+
+      <h3>Our Goal</h3>
+      <p class="lead">
+        To support clinics in delivering fast, accurate, and quality healthcare services with the help of modern technology.
+      </p>
+
+      <h3>Key Features</h3>
+      <div class="features">
+        <div class="feature">
+          <div class="bullet">✓</div>
+          <div><strong>Quick Patient Registration</strong></div>
+        </div>
+        <div class="feature">
+          <div class="bullet">📅</div>
+          <div><strong>Easy Appointment Booking</strong></div>
+        </div>
+        <div class="feature">
+          <div class="bullet">💊</div>
+          <div><strong>Medical & Drug Records</strong></div>
+        </div>
+        <div class="feature">
+          <div class="bullet">✨</div>
+          <div><strong>User-friendly Interface</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="aside">
+      <h3>ClinicXpert</h3>
+      <p style="color:var(--muted);font-size:13px;">
+        A complete solution for modern clinics.
+      </p>
+      <p style="font-size:13px;color:var(--muted);">
+        Contact: <strong>info@clinicxpert.com</strong>
+      </p>
+    </aside>
+  </div>
+</div>
+
+</body>
+</html>

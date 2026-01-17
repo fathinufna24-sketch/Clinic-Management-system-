@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Drug Records</title>
+
+<style>
+/* ===== MENU BAR ===== */
+.navbar{
+  width:100%;
+  background: rgba(255,255,255,0.9);
+  padding:15px 30px;
+  display:flex;
+  justify-content:flex-end;
+  gap:25px;
+  box-shadow:0 2px 5px #aaa;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1000;
+}
+.navbar a{
+  text-decoration:none;
+  color:black;
+  font-weight:bold;
+}
+.navbar a:hover{ color:#0288d1; }
+
+body{
+  font-family: Arial, sans-serif;
+  background-color: #e8f0fe;
+  margin:0;
+}
+
+.page{ padding-top:80px; }
+
+.container{
+  width:500px;
+  margin:30px auto;
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+h2{ text-align:center; }
+
+label{ font-weight:bold; }
+
+input, textarea{
+  width:100%;
+  padding:8px;
+  margin:6px 0 15px;
+  border:1px solid #888;
+  border-radius:5px;
+}
+
+button{
+  width:48%;
+  padding:10px;
+  border:none;
+  border-radius:5px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.save-btn{ background:#4CAF50; color:white; }
+.cancel-btn{ background:#d9534f; color:white; }
+
+.logo{
+  display:block;
+  margin:0 auto 15px;
+  width:80px;
+  animation:rotateLogo 3s linear infinite;
+}
+@keyframes rotateLogo{ 100%{transform:rotate(360deg);} }
+
+.drug-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+}
+.drug-table th, .drug-table td{
+  border:1px solid #999;
+  padding:8px;
+  text-align:center;
+}
+.drug-table th{
+  background:#0288d1;
+  color:white;
+}
+</style>
+
+<script>
+function saveForm(){
+  let drugName = document.getElementById("drugName").value;
+  let dosage = document.getElementById("dosage").value;
+  let form = document.getElementById("form").value;
+  let exp = document.getElementById("exp").value;
+  let stock = document.getElementById("stock").value;
+
+  if(drugName=="" || dosage=="" || form==""){
+    alert("Please fill required fields");
+    return;
+  }
+
+  let table = document.getElementById("drugTable");
+  let row = table.insertRow(-1);
+
+  row.insertCell(0).innerHTML = drugName;
+  row.insertCell(1).innerHTML = dosage;
+  row.insertCell(2).innerHTML = form;
+  row.insertCell(3).innerHTML = exp;
+  row.insertCell(4).innerHTML = stock;
+
+  alert("Drug Record Saved Successfully!");
+
+  document.getElementById("drugForm").reset();
+
+  // Redirect to payment page
+  setTimeout(()=>{
+    window.location.href="CMS Payment.html";
+  },1000);
+}
+</script>
+</head>
+
+<body>
+
+<div class="navbar">
+  <a href="CMS Home.html">Home</a>
+  <a href="CMS About.html">About</a>
+  <a href="CMS Register.html">Register</a>
+  <a href="CMS Drug.html">Drug Records</a>
+  <a href="CMS Appointment.html">Appointment</a>
+  <a href="CMS Payment.html">Payment</a>
+</div>
+
+<div class="page">
+
+<div class="container">
+  <img src="logo.png.jpg" class="logo">
+  <h2>Drug Records</h2>
+
+  <form id="drugForm">
+    <label>Drug Name:</label>
+    <input type="text" id="drugName">
+
+    <label>Dosage:</label>
+    <input type="text" id="dosage">
+
+    <label>Form:</label>
+    <input type="text" id="form">
+
+    <label>EXP Date:</label>
+    <input type="date" id="exp">
+
+    <label>Stock Available:</label>
+    <input type="number" id="stock">
+
+    <button type="button" class="save-btn" onclick="saveForm()">SAVE</button>
+    <button type="reset" class="cancel-btn">CANCEL</button>
+  </form>
+</div>
+
+<div class="container">
+  <h2>Available Drug Records</h2>
+  <table class="drug-table" id="drugTable">
+    <tr>
+      <th>Drug Name</th>
+      <th>Dosage</th>
+      <th>Form</th>
+      <th>EXP Date</th>
+      <th>Stock</th>
+    </tr>
+  </table>
+</div>
+
+</div>
+</body>
+</html>

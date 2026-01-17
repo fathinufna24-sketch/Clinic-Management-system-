@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ClinicXpert - Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:Segoe UI, Arial, sans-serif;
+    background:url('background.webp') no-repeat center center fixed;
+    background-size:cover;
+}
+
+/* ===== Top Bar ===== */
+header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 40px;
+    background:rgba(255,255,255,0.85);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    height:55px;
+    margin-right:10px;
+}
+
+.logo span{
+    font-size:22px;
+    font-weight:bold;
+    color:#0b3c5d;
+}
+
+/* Top Menu */
+nav a{
+    text-decoration:none;
+    margin-left:25px;
+    color:#333;
+    font-weight:500;
+    cursor:pointer;
+}
+
+nav a:hover{
+    color:#0077cc;
+}
+
+/* ===== Center Content ===== */
+.center{
+    text-align:center;
+    margin-top:110px;
+}
+
+.center h1{
+    color:#111;
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.center p{
+    font-size:20px;
+    color:#333;
+    margin-bottom:30px;
+}
+
+/* Main Button */
+.main-btn{
+    background:#222;
+    color:#fff;
+    padding:15px 40px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    margin-bottom:40px;
+}
+
+.main-btn:hover{
+    background:#000;
+}
+
+/* Cards */
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+}
+
+.card{
+    background:rgba(255,255,255,0.9);
+    width:220px;
+    padding:30px 20px;
+    border-radius:20px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.25);
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card .icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin:0;
+    color:#0b3c5d;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo.png.JPG" alt="ClinicXpert Logo">
+        <span>ClinicXpert</span>
+    </div>
+
+    <nav>
+        <a onclick="goHome()">Home</a>
+        <a onclick="goAbout()">About</a>
+        <a onclick="goRegister()">Register</a>
+        <a onclick="goDrugs()">Drug Records</a>
+        <!-- ✅ NEW PAYMENT LINK -->
+        <a onclick="goPayment()">Payment Details</a>
+    </nav>
+</header>
+
+<div class="center">
+    <h1>Welcome to ClinicXpert</h1>
+    <p>Where Healthcare Meets Technology</p>
+
+    <button class="main-btn" onclick="goAppointment()">
+        Make an Appointment
+    </button>
+
+    <div class="cards">
+        <div class="card" onclick="goRegister()">
+            <div class="icon">📝</div>
+            <h3>Registration</h3>
+        </div>
+
+        <div class="card" onclick="goDrugs()">
+            <div class="icon">💊</div>
+            <h3>Drug Records</h3>
+        </div>
+    </div>
+</div>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+function goHome(){
+    window.location.href = "CMS.Home.html";
+}
+function goAbout(){
+    window.location.href = "CMS About.html";
+}
+function goRegister(){
+    window.location.href = "CMS.Registration.html";
+}
+function goDrugs(){
+    window.location.href = "CMS Drugs.html";
+}
+function goAppointment(){
+    window.location.href = "CMS Appointment.html";
+}
+/* ✅ PAYMENT FUNCTION */
+function goPayment(){
+    window.location.href = "CMS Payment.html";
+}
+</script>
+
+</body>
+</html>

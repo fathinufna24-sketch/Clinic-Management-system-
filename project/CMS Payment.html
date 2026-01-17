@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ClinicXpert - Payment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  font-family:Segoe UI, Arial, sans-serif;
+  background:#eef3ff;
+  margin:0;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  background:#ffffff;
+  padding:15px 40px;
+  display:flex;
+  justify-content:flex-end;
+  gap:25px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+
+.navbar a{
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+  cursor:pointer;
+}
+
+.navbar a:hover{
+  color:#0077cc;
+}
+
+/* ===== PAYMENT BOX ===== */
+.container{
+  width:460px;
+  margin:80px auto;
+  background:#fff;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 0 12px rgba(0,0,0,0.25);
+}
+
+h2{
+  text-align:center;
+  margin-bottom:20px;
+  color:#0b3c5d;
+}
+
+.section{
+  margin-bottom:18px;
+}
+
+label{
+  font-weight:bold;
+}
+
+.summary{
+  background:#f4f7ff;
+  padding:15px;
+  border-radius:8px;
+  font-size:14px;
+}
+
+.total{
+  font-size:16px;
+  font-weight:bold;
+  margin-top:8px;
+}
+
+input, select{
+  width:100%;
+  padding:8px;
+  margin-top:8px;
+  border-radius:6px;
+  border:1px solid #888;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  background:#1f7aea;
+  color:white;
+  border:none;
+  border-radius:25px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#155fc4;
+}
+</style>
+
+<script>
+function confirmPayment(){
+  alert("Payment Successful!\n\nThank you for contacting us.\nWe will serve you better 😊");
+}
+</script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <a href="CMS.Home.html">Home</a>
+  <a href="CMS Appointment.html">Appointment</a>
+  <a href="CMS Payment.html">Payment</a>
+  <a href="CMS.Registration.html">Registration</a>
+ <a href="CMS About.html">About</a>
+  <a href="CMS Drugs.html">Drug Records</a>
+
+
+  
+</div>
+
+<!-- PAYMENT CONTENT -->
+<div class="container">
+  <h2>Payment</h2>
+
+  <div class="section summary">
+    <label>Order Summary</label><br><br>
+    Paracetamol x 2 – Rs.400<br>
+    Vitamin C x 1 – Rs.300<br>
+    <hr>
+    Doctor Consultation Fee – Rs.1,000<br>
+    <div class="total">Grand Total: Rs.1,700</div>
+  </div>
+
+  <div class="section">
+    <label>Select Payment Method</label>
+    <select>
+      <option>Cash on Delivery</option>
+      <option>Card Payment</option>
+      <option>Online Transfer</option>
+    </select>
+  </div>
+
+  <button onclick="confirmPayment()">CONFIRM PAYMENT</button>
+</div>
+
+</body>
+</html>
